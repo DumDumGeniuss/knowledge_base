@@ -1,4 +1,4 @@
-root= "/var/www/knowledge_base"
+root= "/var/www/knowledge_base/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
