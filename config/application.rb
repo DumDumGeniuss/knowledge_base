@@ -1,11 +1,13 @@
 require File.expand_path('../boot', __FILE__)
 
-require "devise"
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(*Rails.groups)
+#Bundler.require(*Rails.groups)
+
+#Require the default gems, plus the gems in a group named the same as the current Rails environment
+Bundler.require(:default, Rails.env)
 
 module KnowledgeBase
   class Application < Rails::Application
