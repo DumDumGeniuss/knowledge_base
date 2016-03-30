@@ -1,6 +1,12 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  if Rails.env.development?
+    #OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+    config.omniauth :facebook, '215272212167907', 'a78f2e1794baf459cd7a702c807d1766'
+  else
+    config.omniauth :facebook, '215271062168022', '8e0beafcb8592dd142775e1a017f7ed7',{:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  end
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
