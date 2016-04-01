@@ -1,6 +1,9 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
+  config.secret_key = '4b9928d09c3ae899dddc1c819ac4730209a8d80de1e513a157dd987dd8833e1446e60848255bd8b442f4366e9f388c4be040845f909d98e83ee331bfcff14924'
+
   if Rails.env.development?
     #OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
     config.omniauth :facebook, '215272212167907', 'a78f2e1794baf459cd7a702c807d1766'
