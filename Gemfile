@@ -7,6 +7,8 @@ gem 'rails', '4.2.6'
 #Use postgres in Production
 group :production do
     gem 'pg'
+    # important
+    gem 'rails_12factor'
 end
 # Use sqlite3 as the database for Active Record
 group :development, :test do
