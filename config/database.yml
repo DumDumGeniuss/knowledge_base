@@ -23,8 +23,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: knowledge_base_production
+  database: k_base_production
   host: localhost
   pool: 10
   username: deploy
-  password: a1234567
+  password:

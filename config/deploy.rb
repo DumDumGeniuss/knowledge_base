@@ -1,14 +1,14 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'knowledge_base'
+set :application, 'k_base'
 set :repo_url, 'git@github.com:DumDumGeniuss/knowledge_base.git'
-set :deploy_to, '/home/deploy/knowledge_base'
+set :deploy_to, '/home/deploy/k_base'
 set :user, 'deploy'
 set :linked_dirs,%w{log tmp/pids tmp/cache tmp/sockets}
 
 namespace :deploy do
-  %w[restart].each do |command|
+  %w[start stop restart].each do |command|
     desc 'Manage Unicorn'
     task command do
       on roles(:app), in: :sequence, wait: 1 do
@@ -17,16 +17,6 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :restart
-
-   after :restart, :clear_cache do
-     on roles(:web), in: :groups, limit: 3, wait: 10 do
-       # Here we can do anything such as:
-       # within release_path do
-       #   execute :rake, 'cache:clear'
-       # end
-     end
-   end
 end
 
 # Default branch is :master

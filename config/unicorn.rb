@@ -1,9 +1,9 @@
-root= "/home/deploy/knowledge_base/current"
+root= "/home/deploy/k_base/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
 stdout_path "#{root}/log/unicorn.log"
 
-listen "/tmp/unicorn.knowledge_base.sock"
+listen "/tmp/unicorn.k_base.sock"
 worker_processes 1
 timeout 30
