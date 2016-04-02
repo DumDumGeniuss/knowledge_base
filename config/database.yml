@@ -27,3 +27,4 @@ production:
   host: localhost
   pool: 10
   username: deploy
+  password: a1234567
