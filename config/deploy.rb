@@ -3,7 +3,7 @@ lock '3.4.0'
 
 set :application, 'knowledge_base'
 set :repo_url, 'git@github.com:DumDumGeniuss/knowledge_base.git'
-set :deploy_to, '/var/www/knowledge_base'
+set :deploy_to, '/home/deploy/knowledge_base'
 set :user, 'deploy'
 set :linked_dirs,%w{log tmp/pids tmp/cache tmp/sockets}
 
